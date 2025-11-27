@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffb300;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: url("https://via.placeholder.com/1200x500") center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 40px;
+        }
+
+        .hero-text button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffb300;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* LAYOUT */
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        /* BLOG POSTS */
+        .content {
+            flex: 3;
+        }
+
+        .post {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .post h2 {
+            margin: 15px 0;
+        }
+
+        .read-btn {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ffb300;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            flex: 1;
+        }
+
+        .side-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .side-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .side-box ul {
+            list-style: none;
+        }
+
+        .side-box li {
+            margin-bottom: 10px;
+        }
+
+        .side-box a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                right: 40px;
+                top: 60px;
+                background: white;
+                flex-direction: column;
+                padding: 15px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">MyBlog</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#posts">Blog</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Welcome to My Blog</h1>
+            <p>Explore articles, stories, and creative writing.</p>
+            <button>Read Latest Posts</button>
+        </div>
+    </section>
+
+    <!-- MAIN LAYOUT -->
+    <div class="container">
+
+        <!-- BLOG POSTS -->
+        <main class="content" id="posts">
+
+            <article class="post">
+                <img src="https://via.placeholder.com/700x350" alt="">
+                <h2>Hanging Out With Friends</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id lectus nec ipsum pretium porta.</p>
+                <a class="read-btn" href="#">Read More</a>
+            </article>
+
+            <article class="post">
+                <img src="https://via.placeholder.com/700x350" alt="">
+                <h2>Do Not Miss This Trip Today!</h2>
+                <p>Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                <a class="read-btn" href="#">Read More</a>
+            </article>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="side-box">
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">10 Travel Tips You Must Know</a></li>
+                    <li><a href="#">How To Improve Photography</a></li>
+                    <li><a href="#">The Art of Minimalism</a></li>
+                </ul>
+            </div>
+
+            <div class="side-box">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Technology</a></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 MyBlog — All Rights Reserved</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+                menu.style.flexDirection = "column";
+            }
+        }
+    </script>
+
+</body>
+</html>
